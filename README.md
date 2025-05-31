@@ -12,7 +12,7 @@ Golden Algebra is a groundbreaking mathematical framework that unifies fundament
 - Computational verification of the first 1000 zeta zeros satisfying pentagon constraints
 
 ## Repository Structure
-- `golden_algebra_validator.py`: Python script validating 207 Golden Algebra relationships using sympy
+- `goldenalgebra.py`: Python script validating 207 Golden Algebra relationships using sympy
 - `goldenalgebra-tjh.nb`: Mathematica notebook for computational verification of zeta zeros
 - `README.md`: This file, providing an overview of the project
 
