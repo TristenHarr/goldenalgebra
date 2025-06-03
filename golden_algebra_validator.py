@@ -14,17 +14,18 @@ Constants:
 - φ = (1+√5)/2 (Golden ratio)
 - Φ = (√5-1)/2 (Golden conjugate)
 
-Usage: python golden_algebra_validator_revised_numbered.py
+Usage: python <script_name>.py
 Requires: sympy
 """
 
 from sympy import (
-    symbols, sqrt, Rational, pi, cos, sin, tan, log,
-    simplify, Eq, Matrix, I,
+    symbols, sqrt, Rational, pi, cos, sin, tan,
+    log,  # Removed unused asin, acos, tanh, binomial, summation, factor, solve, Eq, re, im, nsimplify, Float
+    simplify, Matrix, I,
     exp, fibonacci, lucas
 )
 from sympy.matrices import trace, det
-from typing import Any
+from typing import Any  # Removed unused List, Dict
 from dataclasses import dataclass
 
 
@@ -41,7 +42,7 @@ class ValidationResult:
     description: str
 
 
-class GoldenAlgebraValidatorRevisedNumbered:
+class GoldenAlgebraValidatorRevisedNumbered:  # Renamed class
     def __init__(self):
         print("🔬 GOLDEN ALGEBRA VALIDATOR v3.2 - REVISED WITH NUMBERING")
         print("=" * 70)
@@ -49,13 +50,18 @@ class GoldenAlgebraValidatorRevisedNumbered:
         print("Each property will be numbered for easy reference.")
         print()
 
+        # Define exact symbolic constants
         self.sqrt5 = sqrt(5)
+
+        # PRIMARY CONSTANTS
         self.T = (self.sqrt5 - 1) / 4
         self.J = (3 - self.sqrt5) / 4
         self.K = -(self.sqrt5 + 1) / 4
-        self.D = (self.sqrt5 - 2) / 4  # TJ, also H1
-        self.phi = (1 + self.sqrt5) / 2
-        self.Phi = (self.sqrt5 - 1) / 2  # Golden conjugate, also 2T
+
+        # DERIVED CONSTANTS
+        self.D = (self.sqrt5 - 2) / 4  # Product constant D = TJ (H1 in paper)
+        self.phi = (1 + self.sqrt5) / 2  # Golden ratio
+        self.Phi = (self.sqrt5 - 1) / 2  # Golden conjugate (2T)
 
         print("🌟 FUNDAMENTAL CONSTANTS (Exact Symbolic):")
         print(f"T = {self.T}")
@@ -66,6 +72,7 @@ class GoldenAlgebraValidatorRevisedNumbered:
         print(f"Φ (Phi_conj) = {self.Phi}")
         print()
 
+        # Numerical verification
         print("🔢 NUMERICAL VALUES (approximate):")
         print(f"T ≈ {float(self.T):.10f}")
         print(f"J ≈ {float(self.J):.10f}")
@@ -74,10 +81,12 @@ class GoldenAlgebraValidatorRevisedNumbered:
         print(f"φ ≈ {float(self.phi):.10f}")
         print(f"Φ ≈ {float(self.Phi):.10f}")
         print()
+
         self.results = []
         self.property_counter = 0  # Initialize property counter
 
     def validate_property(self, name: str, formula: str, left_expr, right_expr, description: str):
+        """Validate a single property and store result"""
         self.property_counter += 1  # Increment counter for each property
 
         left_simplified = simplify(left_expr)
@@ -87,10 +96,15 @@ class GoldenAlgebraValidatorRevisedNumbered:
 
         result = ValidationResult(
             number=self.property_counter,  # Store number
-            property_name=name, formula=formula, left_side=left_simplified,
-            right_side=right_simplified, difference=difference,
-            is_proven=is_proven, description=description
+            property_name=name,
+            formula=formula,
+            left_side=left_simplified,
+            right_side=right_simplified,
+            difference=difference,
+            is_proven=is_proven,
+            description=description
         )
+
         self.results.append(result)
 
         status = "✓ PROVEN" if is_proven else "✗ FAILED"
@@ -100,9 +114,8 @@ class GoldenAlgebraValidatorRevisedNumbered:
         if not is_proven:
             print(f"    Difference:  {difference}")
         print(f"    Desc: {description}\n")
-        return is_proven
 
-    # --- Start of validation methods (207 properties) ---
+        return is_proven
 
     def validate_fundamental_constants(self):
         print("SECTION: FUNDAMENTAL CONSTANT DEFINITIONS")
@@ -299,7 +312,7 @@ class GoldenAlgebraValidatorRevisedNumbered:
         self.validate_property("G²[0,0]", "G²[0,0] = T² - J²", G_squared[0, 0], self.T ** 2 - self.J ** 2,
                                "Real part of G² (G²[0,0])")
         self.validate_property("G²[0,1]", "G²[0,1] = -2TJ", G_squared[0, 1], -2 * self.T * self.J,
-                               "Imaginary part of G² (G²[0,1]) related to -2TJ")
+                               "Imaginary part of G² (G²[0,1]) related to -2TJ")  # Corrected description
         G3_matrix = Matrix([[self.T, -self.J, self.K], [self.J, self.T, -self.K], [-self.K, self.K, 0]])
         self.validate_property("Trace(G₃)", "Trace(G₃) = 2T", trace(G3_matrix), 2 * self.T,
                                "Trace of 3x3 T,J,K matrix equals 2T")
@@ -317,7 +330,7 @@ class GoldenAlgebraValidatorRevisedNumbered:
                                (self.T + self.J) ** 2 - 2 * self.T * self.J, "Identity for sum of squares T²+J²")
 
     def validate_field_operations(self):
-        print("SECTION: FIELD-LIKE OPERATIONS")
+        print("SECTION: FIELD-LIKE OPERATIONS")  # Toned down
         print("-" * 50)
         G_mult_real = self.T * self.T - self.J * self.J
         G_mult_imag = self.T * self.J + self.J * self.T
@@ -328,15 +341,15 @@ class GoldenAlgebraValidatorRevisedNumbered:
         self.validate_property("Complex Square Real Part as D", "T²-J² = D", G_mult_real, self.D, "T²-J² equals D")
 
     def validate_pell_equation_connections(self):
-        print("SECTION: PELL EQUATION CONNECTIONS")  # Toned down header
+        print("SECTION: PELL EQUATION CONNECTIONS")  # Toned down
         print("-" * 50)
         pell_fundamental_unit_half = (9 + 4 * self.sqrt5) / 2
         self.validate_property("Pell Unit via T", "(9+4√5)/2 = 13/2 + 8T", pell_fundamental_unit_half,
-                               Rational(13, 2) + 8 * self.T, "Pell fundamental unit form via T")
+                               Rational(13, 2) + 8 * self.T, "Pell fundamental unit form (9+4√5)/2 via T")
         self.validate_property("Pell Unit via J", "(9+4√5)/2 = 21/2 - 8J", pell_fundamental_unit_half,
-                               Rational(21, 2) - 8 * self.J, "Pell fundamental unit form via J")
+                               Rational(21, 2) - 8 * self.J, "Pell fundamental unit form (9+4√5)/2 via J")
         self.validate_property("Pell Unit via K", "(9+4√5)/2 = 5/2 - 8K", pell_fundamental_unit_half,
-                               Rational(5, 2) - 8 * self.K, "Pell fundamental unit form via K")
+                               Rational(5, 2) - 8 * self.K, "Pell fundamental unit form (9+4√5)/2 via K")
         self.validate_property("Pell Solution x²-5y²=1", "9² - 5×4² = 1", 9 ** 2 - 5 * 4 ** 2, 1,
                                "Verification of (9,4) as solution to x²-5y²=1")
         self.validate_property("Golden-Pell Equivalence", "T² - TJ - J² = 0 (from φ²-φ-1=0)",
@@ -347,7 +360,7 @@ class GoldenAlgebraValidatorRevisedNumbered:
         self.validate_property("√5 from K", "√5 = -4K - 1", self.sqrt5, -4 * self.K - 1, "√5 expressed linearly by K")
         pell_matrix = Matrix([[9, 20], [4, 9]])
         self.validate_property("Pell Matrix Determinant", "Det([[9,20],[4,9]]) = 1", pell_matrix.det(), 1,
-                               "Determinant of Pell matrix for x²-5y²=1 fundamental solution")
+                               "Determinant of Pell matrix for x²-5y²=1 fundamental solution")  # Corrected Det output
         self.validate_property("T in Pentagon Poly (Pell context)", "4T² + 2T - 1 = 0",
                                4 * self.T ** 2 + 2 * self.T - 1, 0,
                                "T satisfies pentagon polynomial relevant to quadratic forms")
@@ -361,8 +374,8 @@ class GoldenAlgebraValidatorRevisedNumbered:
         self.validate_property("CF Period via T", "(4T+1-2)*2 = 2√5-4", (4 * self.T + 1 - 2) * 2, 2 * self.sqrt5 - 4,
                                "Expression related to CF period using T")
 
-    def validate_fibonacci_lucas_connections(self):
-        print("SECTION: FIBONACCI-LUCAS NUMBER CONNECTIONS")  # Toned down header
+    def validate_fibonacci_lucas_connections(self):  # Renamed
+        print("SECTION: FIBONACCI-LUCAS NUMBER CONNECTIONS")  # Toned down
         print("-" * 70)
         for n_val in range(1, 10):
             fib_n = fibonacci(n_val)
@@ -399,7 +412,7 @@ class GoldenAlgebraValidatorRevisedNumbered:
                                        f"Difference for F_{n_val}={fib_n}, L_{{2*n_val}}={lucas_2n}")
         for n_val in range(2, 8):
             fib_n_minus_1, fib_n, fib_n_plus_1 = fibonacci(n_val - 1), fibonacci(n_val), fibonacci(n_val + 1)
-            if fib_n != 0:
+            if fib_n != 0:  # Avoid division by zero if F_n can be 0 (not for n>=1)
                 self.validate_property(f"Fib Recurrence F_{n_val}",
                                        f"(F_{{{n_val}+1}} - F_{{{n_val}-1}})/F_{n_val} = 1",
                                        (fib_n_plus_1 - fib_n_minus_1) / fib_n, 1,
@@ -414,8 +427,8 @@ class GoldenAlgebraValidatorRevisedNumbered:
                                        f"F_{{{n_val}+{m_val}}}×√5 from T,J", pentagon_expr_sum, fib_n_plus_m_sqrt5,
                                        f"Test F_{n_val + m_val} relation")
 
-    def validate_advanced_fibonacci_lucas_connections(self):
-        print("SECTION: ADVANCED FIBONACCI-LUCAS & MATRIX CONNECTIONS")
+    def validate_advanced_fibonacci_lucas_connections(self):  # Renamed
+        print("SECTION: ADVANCED FIBONACCI-LUCAS & MATRIX CONNECTIONS")  # Toned down
         print("-" * 70)
         G_matrix = Matrix([[self.T, -self.J], [self.J, self.T]])
         F_std_matrix = Matrix([[1, 1], [1, 0]])
@@ -430,7 +443,7 @@ class GoldenAlgebraValidatorRevisedNumbered:
                                    f"Trace of G^{n_val}")
         for n_val in range(1, 7):
             fib_n = fibonacci(n_val)
-            # Corrected line below: removed one '}' after n_val
+            # Corrected f-string: removed one '}' after n_val
             self.validate_property(f"F_{n_val} × K relation", f"F_{n_val} × K = -F_{n_val} × φ/2", fib_n * self.K,
                                    -fib_n * self.phi / 2, f"Relation of F_{n_val} × K")
         pentagon_poly_seq = [4 * fibonacci(n_val) ** 2 + 2 * fibonacci(n_val) - 1 for n_val in range(1, 8)]
@@ -457,7 +470,7 @@ class GoldenAlgebraValidatorRevisedNumbered:
                                    simplify(recurrence_val), f"Value of T,J based recurrence for n={n_val}")
 
     def validate_fibonacci_lucas_matrix_determinants(self):  # Renamed
-        print("SECTION: FIBONACCI-LUCAS MATRIX DETERMINANTS")  # Toned down header
+        print("SECTION: FIBONACCI-LUCAS MATRIX DETERMINANTS")  # Toned down
         print("-" * 70)
         G_matrix = Matrix([[self.T, -self.J], [self.J, self.T]])
         F_std_matrix = Matrix([[1, 1], [1, 0]])
@@ -478,7 +491,7 @@ class GoldenAlgebraValidatorRevisedNumbered:
                                "Verification of T-iJ as eigenvalue of G")
 
     def validate_elliptic_curve_connections(self):  # Renamed
-        print("SECTION: ELLIPTIC CURVE RELATED ALGEBRAIC PROPERTIES")  # Toned down header
+        print("SECTION: ELLIPTIC CURVE RELATED ALGEBRAIC PROPERTIES")  # Toned down
         print("-" * 50)
         curve_a, curve_b = 1, 1
         x_T = self.T
@@ -525,12 +538,12 @@ class GoldenAlgebraValidatorRevisedNumbered:
         self.validate_property("Algebraic Identity: 75(T+J)", "75(T+J) = 75/2", 75 * (self.T + self.J), Rational(75, 2),
                                "Symbolic value of 75(T+J) using T+J=1/2")
 
-    def validate_additional_identities_v3(self):
-        print("SECTION: ADDITIONAL ALGEBRAIC & NUMERICAL IDENTITIES (v3)")
+    def validate_additional_identities_v3(self):  # Formerly Riemann Proof related
+        print("SECTION: ADDITIONAL ALGEBRAIC & NUMERICAL IDENTITIES (v3)")  # Neutralized name
         print("-" * 50)
         self.validate_property("Identity: T+J", "T + J = 1/2", self.T + self.J, Rational(1, 2),
                                "Algebraic identity T+J=1/2 (re-validation context)")
-        # Corrected line below: Changed 'J' to 'self.J'
+        # Corrected J to self.J
         self.validate_property("Identity: 1-(T+J)", "1 - (T+J) = 1/2", 1 - (self.T + self.J), Rational(1, 2),
                                "Algebraic identity 1-(T+J)=1/2 (re-validation context)")
         self.validate_property("Identity: T Pentagon Poly", "4T² + 2T - 1 = 0", 4 * self.T ** 2 + 2 * self.T - 1, 0,
