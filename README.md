@@ -1,5 +1,17 @@
 # The k-Metallic Mirror: An Algebraic System and its Foundational Symbolic Proofs
 
+## ✨ Core Findings Summary
+
+This research introduces the **k-Metallic Algebra**, defined for any $k>0$ by constants $T_k$ and $J_k$ satisfying:
+$$ T_k + J_k = k/2 \quad \text{and} \quad T_k/J_k = \Phi_k = \frac{k + \sqrt{k^2+4}}{2} $$
+A fundamental "Bridge Identity" links addition and multiplication within this system:
+$$ T_k - J_k = 2T_kJ_k $$
+The $k=1$ **Golden Algebra** is canonical, featuring $T_1 = \cos(2\pi/5)$ and exhibiting deep number theoretic connections, including a structural path to Euler's identity $e^{i\pi}=-1$. Crucially, we prove that if the system's metallic mean $\Phi_k$ is constrained to be the Golden Ratio $\phi$, it uniquely forces $k=1$:
+$$ \Phi_k = \phi \implies k=1 $$
+This algebraic rigidity underpins the "Mirror Math" hypothesis, proposing that if Riemann zeta zeros $s_0$ correspond to this system via $k_0 = 2\Re(s_0)$ and satisfy the Golden Ratio Condition ($\Phi_{k_0}=\phi$), then $\Re(s_0)=1/2$.
+
+---
+
 ## 🪙 Abstract
 
 This research introduces the **k-Metallic Algebra**, a novel algebraic framework parameterized by a real number $k > 0$. The system is constructed upon two fundamental constants, $T_k$ and $J_k$, uniquely determined by their sum and ratio:
