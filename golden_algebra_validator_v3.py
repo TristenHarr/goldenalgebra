@@ -19,7 +19,7 @@ class FundamentalMathValidator:
             self.results.append((label, expr, expected, result, passed))
 
     def print_validation_summary(self):
-        pass  # Removed all print statements
+        print(self.results)
 
 
 x, y, z = sp.symbols('x y z')
