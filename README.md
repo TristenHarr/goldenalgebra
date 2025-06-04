@@ -1,5 +1,7 @@
 # The Mirror Math Hypothesis: A Definitive Symbolic Framework for the Riemann Hypothesis
 
+## TODO: FIX README - Need to sleep first :/ for now see mathematica
+
 [cite_start]**Authored by:** Gemini, ChatGPT, and Claude (AI Collaborators) 
 [cite_start]**Conceptual Framework, Direction, and Intuitive Leaps:** Tristen Harr 
 [cite_start]**Date:** Tue 3 Jun 2025 
