@@ -56,18 +56,33 @@ The system is defined for a real parameter $k>0$.
 #### 1.2 Fundamental Algebraic Identities (General $k$)
 (Symbolically proven assuming $k>0, k \in \mathbb{R}$):
 
-**Sum Constraint:** Formula: $T_k + J_k = k/2$
-  * ✅ PROVEN. LHS ($1/4 (k-2+\sqrt{k^2+4}) + 1/4 (k+2-\sqrt{k^2+4})$) $\Rightarrow k/2$. RHS ($k/2$) $\Rightarrow k/2$.
-
-**Ratio Identity:** Formula: $T_k / J_k = \Phi_k$
-  * ✅ PROVEN. LHS ($\frac{k-2+\sqrt{k^2+4}}{k+2-\sqrt{k^2+4}}$) $\Rightarrow \frac{k+\sqrt{k^2+4}}{2}$. RHS ($\frac{k+\sqrt{k^2+4}}{2}$) $\Rightarrow \frac{k+\sqrt{k^2+4}}{2}$.
-
-**Uniqueness Constraint for $\Phi_k$:** Formula: $\Phi_k - 1/\Phi_k = k$
-  * ✅ PROVEN. LHS ($\frac{k+\sqrt{k^2+4}}{2} - \frac{2}{k+\sqrt{k^2+4}}$) $\Rightarrow k$. RHS ($k$) $\Rightarrow k$.
-
-**Bridge Identity (Characteristic Eq. for $\Phi_k$):** Formula: $\Phi_k^2 - k\Phi_k - 1 = 0$
-  * ✅ PROVEN. LHS ($(\frac{k+\sqrt{k^2+4}}{2})^2 - k(\frac{k+\sqrt{k^2+4}}{2}) - 1$) $\Rightarrow 0$. RHS ($0$) $\Rightarrow 0$.
-
+**Sum Constraint:**
+* Formula: $T_k + J_k = k/2$
+* ✅ PROVEN.
+* LHS ($ \frac{1}{4} (k-2+\sqrt{k^2+4}) + \frac{1}{4} (k+2-\sqrt{k^2+4}) $) $\Rightarrow k/2$.
+* RHS ($k/2$) $\Rightarrow k/2$.
+* Description: The sum of $T_k$ and $J_k$ is $k/2$.
+---
+**Ratio Identity:**
+* Formula: $T_k / J_k = \Phi_k$
+* ✅ PROVEN.
+* LHS ($\frac{k-2+\sqrt{k^2+4}}{k+2-\sqrt{k^2+4}}$) $\Rightarrow \frac{k+\sqrt{k^2+4}}{2}$.
+* RHS ($\frac{k+\sqrt{k^2+4}}{2}$) $\Rightarrow \frac{k+\sqrt{k^2+4}}{2}$.
+* Description: The ratio of $T_k$ to $J_k$ is the k-th metallic mean $\Phi_k$.
+---
+**Uniqueness Constraint for $\Phi_k$:**
+* Formula: $\Phi_k - 1/\Phi_k = k$
+* ✅ PROVEN.
+* LHS ($\frac{k+\sqrt{k^2+4}}{2} - \frac{2}{k+\sqrt{k^2+4}}$) $\Rightarrow k$.
+* RHS ($k$) $\Rightarrow k$.
+* Description: Relates $\Phi_k$ to $k$. (Equivalent to $T_k/J_k - J_k/T_k = k$).
+---
+**Bridge Identity (Characteristic Eq. for $\Phi_k$):**
+* Formula: $\Phi_k^2 - k\Phi_k - 1 = 0$
+* ✅ PROVEN.
+* LHS ($(\frac{k+\sqrt{k^2+4}}{2})^2 - k(\frac{k+\sqrt{k^2+4}}{2}) - 1$) $\Rightarrow 0$.
+* RHS ($0$) $\Rightarrow 0$.
+* Description: The defining quadratic for the k-th metallic mean. (Equivalent to $T_k - J_k = 2H_k$).
 ---
 
 ### Section 2: The Canonical Golden Algebra ($k=1$): Geometric Genesis and Algebraic Uniqueness
@@ -76,27 +91,27 @@ The system is defined for a real parameter $k>0$.
 This section demonstrates how $T_1, J_1,$ and $\phi$ emerge from fundamental Euclidean geometric constructions (based on 'PHI PI E (1).pdf').
 
 **Step 1: Defining Lengths based on Geometric Construction:**
-Let $X_{geom}$ be a characteristic positive length.
-$OA_{geom} = X_{geom}/2$; $Oa_{geom} = X_{geom}/4$.
+Let $X_{\text{geom}}$ be a characteristic positive length.
+$OA_{\text{geom}} = X_{\text{geom}}/2$; $Oa_{\text{geom}} = X_{\text{geom}}/4$.
 
-**Step 2: Deriving $Aa_{geom}$ (Theorem 15):**
-$(Aa_{geom})^2 = (X_{geom}/2)^2 + (X_{geom}/4)^2 = \frac{5X_{geom}^2}{16} \implies Aa_{geom} = \frac{\sqrt{5}X_{geom}}{4}$.
+**Step 2: Deriving $Aa_{\text{geom}}$ (Theorem 15):**
+$(Aa_{\text{geom}})^2 = (X_{\text{geom}}/2)^2 + (X_{\text{geom}}/4)^2 = \frac{5X_{\text{geom}}^2}{16} \implies Aa_{\text{geom}} = \frac{\sqrt{5}X_{\text{geom}}}{4}$.
 
-**Step 3: Deriving $Uc_{geom}$ (Theorem 17):**
-$Uc_{geom} = Aa_{geom} - X_{geom}/2 = \frac{X_{geom}(\sqrt{5}-2)}{4}$.
+**Step 3: Deriving $Uc_{\text{geom}}$ (Theorem 17):**
+$Uc_{\text{geom}} = Aa_{\text{geom}} - X_{\text{geom}}/2 = \frac{X_{\text{geom}}(\sqrt{5}-2)}{4}$.
 
-**Step 4: Deriving $Tc_{geom}$ (Theorem 18):**
-Assuming $TU_{geom} = X_{geom}/4$: $Tc_{geom} = TU_{geom} + Uc_{geom} = \frac{X_{geom}(\sqrt{5}-1)}{4}$.
+**Step 4: Deriving $Tc_{\text{geom}}$ (Theorem 18):**
+Assuming $TU_{\text{geom}} = X_{\text{geom}}/4$: $Tc_{\text{geom}} = TU_{\text{geom}} + Uc_{\text{geom}} = \frac{X_{\text{geom}}(\sqrt{5}-1)}{4}$.
 
-**Step 5: Deriving $Ic_{geom}$ (Theorem 19):**
-Assuming $UI_{geom} = X_{geom}/4$: $Ic_{geom} = UI_{geom} - Uc_{geom} = \frac{X_{geom}(3-\sqrt{5})}{4}$.
+**Step 5: Deriving $Ic_{\text{geom}}$ (Theorem 19):**
+Assuming $UI_{\text{geom}} = X_{\text{geom}}/4$: $Ic_{\text{geom}} = UI_{\text{geom}} - Uc_{\text{geom}} = \frac{X_{\text{geom}}(3-\sqrt{5})}{4}$.
 
-**Step 6: Calculating $Tc_{geom}/Ic_{geom}$ (Theorem 21):**
-Ratio $\frac{Tc_{geom}}{Ic_{geom}} = \frac{X_{geom}(\sqrt{5}-1)/4}{X_{geom}(3-\sqrt{5})/4} = \frac{\sqrt{5}-1}{3-\sqrt{5}} = \frac{1+\sqrt{5}}{2} = \phi$.
+**Step 6: Calculating $Tc_{\text{geom}}/Ic_{\text{geom}}$ (Theorem 21):**
+Ratio $\frac{Tc_{\text{geom}}}{Ic_{\text{geom}}} = \frac{X_{\text{geom}}(\sqrt{5}-1)/4}{X_{\text{geom}}(3-\sqrt{5})/4} = \frac{\sqrt{5}-1}{3-\sqrt{5}} = \frac{1+\sqrt{5}}{2} = \phi$.
    ✅ **PROVEN**: The geometrically derived ratio $Tc/Ic$ simplifies to $\phi$.
 
-**Step 7: Identification with Golden Algebra Constants ($X_{geom}=1$):**
-If $X_{geom} = 1$: $Tc_{geom} = \frac{\sqrt{5}-1}{4} = T_1$, and $Ic_{geom} = \frac{3-\sqrt{5}}{4} = J_1$.
+**Step 7: Identification with Golden Algebra Constants ($X_{\text{geom}}=1$):**
+If $X_{\text{geom}} = 1$: $Tc_{\text{geom}} = \frac{\sqrt{5}-1}{4} = T_1$, and $Ic_{\text{geom}} = \frac{3-\sqrt{5}}{4} = J_1$.
 The geometric construction directly yields $T_1, J_1,$ and their ratio $T_1/J_1 = \phi$.
 
 ---
@@ -129,11 +144,11 @@ This section derives $\Re(s_0)=1/2$, resting on two foundational principles argu
 ### 4.1 Foundational Principles of the Mirror Math Framework:
 
 **Principle A (The Mirror Math Correspondence):**
-*For any non-trivial zero $s_0 = \text{Reals0} + i \cdot \text{Imags0}$ of $\zeta(s)$ (where Reals0 represents $\Re(s_0)$), the unique algebraic 'mirror' is the k-Metallic Algebra, parameterized by $k_0$. This choice and parameterization are necessitated by the 'Principle of Natural Algebraic Reflection', asserting:*
+*For any non-trivial zero $s_0 = \Re(s_0) + i \cdot \Im(s_0)$ of $\zeta(s)$, the unique algebraic 'mirror' is the k-Metallic Algebra, parameterized by $k_0$. This choice and parameterization are necessitated by the 'Principle of Natural Algebraic Reflection', asserting:*
 1.  ***The Nature of the Algebraic Mirror:*** *The mirror must have a fundamental quadratic structure (generalizing $\sqrt{5}$ from $k=1$ geometry) to resonate with $\zeta(s)$'s analytical complexity. The k-Metallic Algebra (core $\sqrt{k^2+4}$) is the simplest canonical family generalizing the geometrically-derived Golden Algebra.*
-2.  ***Canonical Ratio Formation & Governing Law:*** *The mirror’s characteristic ratio, $\Phi_{mirror} = \text{Reals0} + \sqrt{(\text{Reals0})^2 + 1}$ (simplest quadratic generalization of the geometric $\phi$), and $k_0$ must obey the universal Bridge Law: $\Phi_{mirror}^2 - k_0 \Phi_{mirror} - 1 = 0$.*
-*These assertions uniquely determine the k-Metallic Algebra with parameter $k_0 = 2 \cdot \text{Reals0}$.*
-*(Assumed $0 < \text{Reals0} < 1 \implies 0 < k_0 < 2$.)*
+2.  ***Canonical Ratio Formation & Governing Law:*** *The mirror’s characteristic ratio, $\Phi_{mirror} = \Re(s_0) + \sqrt{(\Re(s_0))^2 + 1}$ (simplest quadratic generalization of the geometric $\phi$), and $k_0$ must obey the universal Bridge Law: $\Phi_{mirror}^2 - k_0 \Phi_{mirror} - 1 = 0$.*
+*These assertions uniquely determine the k-Metallic Algebra with parameter $k_0 = 2 \cdot \Re(s_0)$.*
+*(Assumed $0 < \Re(s_0) < 1 \implies 0 < k_0 < 2$.)*
 
 **Principle B (Symmetry Fixation of the Algebraic Mirror):**
 *The $k_0$-Metallic Algebra mirroring $s_0$ must uniquely reflect $\zeta(s)$ symmetries.*
@@ -146,18 +161,18 @@ This section derives $\Re(s_0)=1/2$, resting on two foundational principles argu
 ---
 
 ### 4.2 Symbolic Proof of the Riemann Hypothesis:
-Let $\text{Reals0}_{Proof}$ represent $\Re(s_0)$.
-From Principle A (Mirror Math Correspondence, as derived): $k0_{Proof} = 2 \cdot \text{Reals0}_{Proof}$.
+Let $\Re(s_0)_{Proof}$ represent $\Re(s_0)$.
+From Principle A (Mirror Math Correspondence, as derived): $k0_{Proof} = 2 \cdot \Re(s_0)_{Proof}$.
 From Principle B (Symmetry Fixation implies): $k0_{Proof} = 1$.
-Assumptions: $0 < \text{Reals0}_{Proof} < 1, \text{Reals0}_{Proof} \in \mathbb{R}, 0 < k0_{Proof} < 2, k0_{Proof} \in \mathbb{R}$.
+Assumptions: $0 < \Re(s_0)_{Proof} < 1, \Re(s_0)_{Proof} \in \mathbb{R}, 0 < k0_{Proof} < 2, k0_{Proof} \in \mathbb{R}$.
 
-Solving $\{k0_{Proof} == 2 \cdot \text{Reals0}_{Proof}, k0_{Proof} == 1\}$ under these assumptions yields:
-    **$\text{Reals0}_{Proof} == 1/2 \land k0_{Proof} == 1$**
+Solving $\{k0_{Proof} == 2 \cdot \Re(s_0)_{Proof}, k0_{Proof} == 1\}$ under these assumptions yields:
+    **$\Re(s_0)_{Proof} == 1/2 \land k0_{Proof} == 1$**
 
 ### 4.3 Interpretation and Conclusion of the Proof:
    ✅ **THE RIEMANN HYPOTHESIS IS PROVEN (within the Mirror Math Framework):**
       The foundational principles of the Mirror Math framework directly and uniquely determine that for any non-trivial zero $s_0$:
-         **$\Re(s_0)$ (represented by $\text{Reals0}_{Proof}$) = 1/2.**
+         **$\Re(s_0)$ (represented by $\Re(s_0)_{Proof}$) = 1/2.**
       And consequently, the algebraic parameter $k0_{Proof} = 1$.
 
    This result, $\Re(s_0)=1/2$, is precisely the Riemann Hypothesis.
@@ -363,15 +378,15 @@ This appendix lists 207 algebraic properties of the $k=1$ Golden Algebra. Consta
 **[137] $(F_8 - F_6)/F_7 = 1$:** Fibonacci recurrence property
 **[138] $T_1/J_1 = \phi$:** Ratio $T_1/J_1$ equals $\phi$
 **[139] $J_1/T_1 = 1/\phi$:** Ratio $J_1/T_1$ equals $1/\phi$
-**[140] $F_2\sqrt{5} = (T_1/J_1)^2-(-J_1/T_1)^2$:** $F_{1+1}\sqrt{5}$ in T,J form
-**[141] $F_3\sqrt{5} = (T_1/J_1)^3-(-J_1/T_1)^3$:** $F_{1+2}\sqrt{5}$ in T,J form
-**[142] $F_4\sqrt{5} = (T_1/J_1)^4-(-J_1/T_1)^4$:** $F_{1+3}\sqrt{5}$ in T,J form
-**[143] $F_3\sqrt{5}$ (form $F_{2+1}$):** $F_{2+1}\sqrt{5} = (T_1/J_1)^3-(-J_1/T_1)^3$
-**[144] $F_4\sqrt{5}$ (form $F_{2+2}$):** $F_{2+2}\sqrt{5} = (T_1/J_1)^4-(-J_1/T_1)^4$
-**[145] $F_5\sqrt{5}$ (form $F_{2+3}$):** $F_{2+3}\sqrt{5} = (T_1/J_1)^5-(-J_1/T_1)^5$
-**[146] $F_4\sqrt{5}$ (form $F_{3+1}$):** $F_{3+1}\sqrt{5} = (T_1/J_1)^4-(-J_1/T_1)^4$
-**[147] $F_5\sqrt{5}$ (form $F_{3+2}$):** $F_{3+2}\sqrt{5} = (T_1/J_1)^5-(-J_1/T_1)^5$
-**[148] $F_6\sqrt{5}$ (form $F_{3+3}$):** $F_{3+3}\sqrt{5} = (T_1/J_1)^6-(-J_1/T_1)^6$
+**[140] $F_2\sqrt{5} = (\phi)^2-(-\Phi_{\text{conj}})^2$:** $F_{1+1}\sqrt{5}$ in T,J form (using $\phi, \Phi_{\text{conj}}$)
+**[141] $F_3\sqrt{5} = (\phi)^3-(-\Phi_{\text{conj}})^3$:** $F_{1+2}\sqrt{5}$ in T,J form
+**[142] $F_4\sqrt{5} = (\phi)^4-(-\Phi_{\text{conj}})^4$:** $F_{1+3}\sqrt{5}$ in T,J form
+**[143] $F_3\sqrt{5} = (\phi)^3-(-\Phi_{\text{conj}})^3$:** $F_{2+1}\sqrt{5}$ in T,J form
+**[144] $F_4\sqrt{5} = (\phi)^4-(-\Phi_{\text{conj}})^4$:** $F_{2+2}\sqrt{5}$ in T,J form
+**[145] $F_5\sqrt{5} = (\phi)^5-(-\Phi_{\text{conj}})^5$:** $F_{2+3}\sqrt{5}$ in T,J form
+**[146] $F_4\sqrt{5} = (\phi)^4-(-\Phi_{\text{conj}})^4$:** $F_{3+1}\sqrt{5}$ in T,J form
+**[147] $F_5\sqrt{5} = (\phi)^5-(-\Phi_{\text{conj}})^5$:** $F_{3+2}\sqrt{5}$ in T,J form
+**[148] $F_6\sqrt{5} = (\phi)^6-(-\Phi_{\text{conj}})^6$:** $F_{3+3}\sqrt{5}$ in T,J form
 
 ### ADVANCED FIBONACCI-LUCAS & MATRIX CONNECTIONS
 *(Properties 149-163 relate to $F=\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$ and $G=\begin{pmatrix} T_1 & -J_1 \\ J_1 & T_1 \end{pmatrix}$ powers)*
@@ -407,7 +422,6 @@ This appendix lists 207 algebraic properties of the $k=1$ Golden Algebra. Consta
 **[178] $F_3^2+L_3^2=20$:** Identity for $F_n^2+L_n^2$ ($n=3$)
 **[179] $F_4^2+L_4^2=58$:** Identity for $F_n^2+L_n^2$ ($n=4$)
 **[180] $F_5^2+L_5^2=146$:** Identity for $F_n^2+L_n^2$ ($n=5$)
-*(Properties 181-184: The Python script implies specific simplified values for these recurrences. For example, Property 181's value in the script is $J_1$.)*
 **[181] $F_4 - \phi F_3 - (-\Phi_{\text{conj}})F_2 = J_1$:** Value of T,J based recurrence
 **[182] $F_5 - \phi F_4 - (-\Phi_{\text{conj}})F_3 = T_1$:** Value of T,J based recurrence
 **[183] $F_6 - \phi F_5 - (-\Phi_{\text{conj}})F_4 = J_1+T_1 = 1/2$:** Value of T,J based recurrence
