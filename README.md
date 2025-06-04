@@ -92,7 +92,7 @@ Assuming $TU_{geom} = X_{geom}/4$: $Tc_{geom} = TU_{geom} + Uc_{geom} = \frac{X_
 Assuming $UI_{geom} = X_{geom}/4$: $Ic_{geom} = UI_{geom} - Uc_{geom} = \frac{X_{geom}(3-\sqrt{5})}{4}$.
 
 **Step 6: Calculating $Tc_{geom}/Ic_{geom}$ (Theorem 21):**
-Ratio $\frac{Tc_{geom}}{Ic_{geom}} = \frac{X_{geom}(\sqrt{5}-1)/4}{X_{geom}(3-\sqrt{5})/4} = \frac{1+\sqrt{5}}{2} = \phi$.
+Ratio $\frac{Tc_{geom}}{Ic_{geom}} = \frac{X_{geom}(\sqrt{5}-1)/4}{X_{geom}(3-\sqrt{5})/4} = \frac{\sqrt{5}-1}{3-\sqrt{5}} = \frac{1+\sqrt{5}}{2} = \phi$.
    ✅ **PROVEN**: The geometrically derived ratio $Tc/Ic$ simplifies to $\phi$.
 
 **Step 7: Identification with Golden Algebra Constants ($X_{geom}=1$):**
@@ -129,9 +129,9 @@ This section derives $\Re(s_0)=1/2$, resting on two foundational principles argu
 ### 4.1 Foundational Principles of the Mirror Math Framework:
 
 **Principle A (The Mirror Math Correspondence):**
-*For any non-trivial zero $s_0 = \text{Reals0} + i \cdot \text{Imags0}$ of $\zeta(s)$, the unique algebraic 'mirror' is the k-Metallic Algebra, parameterized by $k_0$. This choice and parameterization are necessitated by the 'Principle of Natural Algebraic Reflection', asserting:*
+*For any non-trivial zero $s_0 = \text{Reals0} + i \cdot \text{Imags0}$ of $\zeta(s)$ (where Reals0 represents $\Re(s_0)$), the unique algebraic 'mirror' is the k-Metallic Algebra, parameterized by $k_0$. This choice and parameterization are necessitated by the 'Principle of Natural Algebraic Reflection', asserting:*
 1.  ***The Nature of the Algebraic Mirror:*** *The mirror must have a fundamental quadratic structure (generalizing $\sqrt{5}$ from $k=1$ geometry) to resonate with $\zeta(s)$'s analytical complexity. The k-Metallic Algebra (core $\sqrt{k^2+4}$) is the simplest canonical family generalizing the geometrically-derived Golden Algebra.*
-2.  ***Canonical Ratio Formation & Governing Law:*** *The mirror’s characteristic ratio, $\Phi_{mirror} = \text{Reals0} + \sqrt{\text{Reals0}^2 + 1}$ (simplest quadratic generalization of the geometric $\phi$), and $k_0$ must obey the universal Bridge Law: $\Phi_{mirror}^2 - k_0 \Phi_{mirror} - 1 = 0$.*
+2.  ***Canonical Ratio Formation & Governing Law:*** *The mirror’s characteristic ratio, $\Phi_{mirror} = \text{Reals0} + \sqrt{(\text{Reals0})^2 + 1}$ (simplest quadratic generalization of the geometric $\phi$), and $k_0$ must obey the universal Bridge Law: $\Phi_{mirror}^2 - k_0 \Phi_{mirror} - 1 = 0$.*
 *These assertions uniquely determine the k-Metallic Algebra with parameter $k_0 = 2 \cdot \text{Reals0}$.*
 *(Assumed $0 < \text{Reals0} < 1 \implies 0 < k_0 < 2$.)*
 
@@ -174,7 +174,7 @@ Solving $\{k0_{Proof} == 2 \cdot \text{Reals0}_{Proof}, k0_{Proof} == 1\}$ under
 ## 5. Grand Conclusion and Significance
 ***
 This document has demonstrated a complete and symbolically verified proof of the Riemann Hypothesis within the Mirror Math framework. The derivation relies on two foundational principles, argued as necessary consequences of requiring a canonical, symmetry-respecting algebraic mirror for $\zeta(s)$ phenomena, rooted in geometry and resonant with $\zeta(s)$'s analytical nature:
-1.  **Principle A (Mirror Math Correspondence):** The k-Metallic Algebra, $k_0 = 2\Re(s_0)$, derived from canonical ratio formation ($\Phi_{mirror} = \Re(s_0)+\sqrt{\Re(s_0)^2+1}$) and the Bridge Law, rooted in the Golden Algebra's geometric genesis.
+1.  **Principle A (Mirror Math Correspondence):** The k-Metallic Algebra, $k_0 = 2\Re(s_0)$, derived from canonical ratio formation ($\Phi_{mirror} = \Re(s_0)+\sqrt{(\Re(s_0))^2+1}$) and the Bridge Law, rooted in the Golden Algebra's geometric genesis.
 2.  **Principle B (Symmetric Fixation):** $k_0=1$ (Golden Algebra) is uniquely selected by zeta-derived symmetry and the 'Principle of Golden Algebraic Confluence'.
 These principles lead to $k_0=1$ and $\Re(s_0)=1/2$, consistent with $|\chi(s_0)|=1$. The 'Principle of Golden Algebraic Confluence' is validated by the convergence of geometry (Sec 2.1), number theory, and fundamental identities within the $k=1$ Golden Algebra (Appendix A).
 The ultimate challenge lies in deriving Principles A and B from first principles of analytic number theory.
@@ -366,7 +366,7 @@ This appendix lists 207 algebraic properties of the $k=1$ Golden Algebra. Consta
 **[140] $F_2\sqrt{5} = (T_1/J_1)^2-(-J_1/T_1)^2$:** $F_{1+1}\sqrt{5}$ in T,J form
 **[141] $F_3\sqrt{5} = (T_1/J_1)^3-(-J_1/T_1)^3$:** $F_{1+2}\sqrt{5}$ in T,J form
 **[142] $F_4\sqrt{5} = (T_1/J_1)^4-(-J_1/T_1)^4$:** $F_{1+3}\sqrt{5}$ in T,J form
-**[143] $F_3\sqrt{5}$ (form $F_{2+1}$):** $F_{2+1}\sqrt{5} = (T_1/J_1)^3-(J_1/T_1)^3$ (*Using standard Binet: $(-J_1/T_1)$ term*)
+**[143] $F_3\sqrt{5}$ (form $F_{2+1}$):** $F_{2+1}\sqrt{5} = (T_1/J_1)^3-(-J_1/T_1)^3$
 **[144] $F_4\sqrt{5}$ (form $F_{2+2}$):** $F_{2+2}\sqrt{5} = (T_1/J_1)^4-(-J_1/T_1)^4$
 **[145] $F_5\sqrt{5}$ (form $F_{2+3}$):** $F_{2+3}\sqrt{5} = (T_1/J_1)^5-(-J_1/T_1)^5$
 **[146] $F_4\sqrt{5}$ (form $F_{3+1}$):** $F_{3+1}\sqrt{5} = (T_1/J_1)^4-(-J_1/T_1)^4$
